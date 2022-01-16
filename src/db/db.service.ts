@@ -30,13 +30,14 @@ export class DbService implements TypeOrmOptionsFactory {
         username: this.configService.get<string>('database.DB_USERNAME'),
         password: this.configService.get<string>('database.DB_PASSWORD'),
         database: this.configService.get<string>('database.DB_DATABASE'),
-        entities: this.configService.get<string[]>('database.DB_ENTITIES'),
-        migrations: this.configService.get<string[]>('database.DB_MIGRATIONS'),
+        entities: [this.configService.get<string>('database.DB_ENTITIES')],
+        migrations: [this.configService.get<string>('database.DB_MIGRATIONS')],
         cli: {
           migrationsDir: this.configService.get<string>('database.DB_CLI'),
         },
       };
     }
+
     return connectionOptions;
   }
 }

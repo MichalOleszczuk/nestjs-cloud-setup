@@ -32,17 +32,17 @@ services:
       - postgres
     restart: unless-stopped
 
-  app:
-    container_name: nestjs-cloud-setup
-    image: nestjs-cloud-setup
-    build: .
-    ports:
-      - "3010:3010"
-    networks:
-      - postgres
-    restart: unless-stopped
-    depends_on:
-      - postgres
+  # app:
+  #   container_name: nestjs-cloud-setup
+  #   image: nestjs-cloud-setup
+  #   build: .
+  #   ports:
+  #     - "3010:3010"
+  #   networks:
+  #     - postgres
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - postgres
 
 networks:
   postgres:
